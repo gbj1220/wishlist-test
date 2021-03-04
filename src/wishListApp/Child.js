@@ -33,15 +33,10 @@ export class Child extends Component {
 
           return (
             <React.Fragment key={item.id}>
-              {/* <li style={{ textDecoration: item.isDone ? "line-through" : "" }}> */}
-              {/* <li className={`${item.isDone ? "strike-through-isDone" : ""}`}> */}
-              {/* <li style={{ textDecoration: item.isDone && "line-through" }}> */}
-              {/* <li className={strikeThroughClass}>{item.wish}</li>{" "} */}
-
               {item.isEditToggle ? (
                 <input
                   value={this.state.toggleInput}
-                  style={{ marginRight: 10 }}
+                  style={{ marginRight: 10, marginBottom: 10 }}
                   onChange={this.handleToggleOnChange}
                   name="toggleInput"
                 />
@@ -68,20 +63,6 @@ export class Child extends Component {
                 propsOnClick={() => this.props.handleDeleteByID(item.id)}
                 propsName={"Delete"}
               />
-
-              {/* <button
-              className="btn btn-warning button-style"
-              onClick={() => props.handleIsDone(item.id)}
-            >
-              Done
-            </button>
-            <button
-              className="btn btn-danger button-style"
-              onClick={() => props.handleDeleteByID(item.id)}
-              //onClick={this.handleDeleteByID(item.id)}
-            >
-              Delete
-            </button> */}
               <br />
             </React.Fragment>
           );

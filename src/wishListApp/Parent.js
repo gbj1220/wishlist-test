@@ -46,10 +46,6 @@ class Parent extends Component {
   };
 
   handleDeleteByID = (id) => {
-    // let filteredWishListArray = this.state.wishList.filter(
-    //   (item) => item.id !== id
-    // );
-
     let filteredWishListArray = this.state.wishList.filter((item) => {
       if (item.id !== id) {
         item.isButtonToggle = false;
@@ -63,10 +59,6 @@ class Parent extends Component {
   };
 
   handleIsDone = (id) => {
-    //go through the array and find the ID of the wish
-    //Then flip the wish from false to true or true to false
-    //then set new state
-
     let updatedWishArray = this.state.wishList.map((item) => {
       if (item.id === id) {
         item.isDone = !item.isDone;
@@ -83,15 +75,9 @@ class Parent extends Component {
       if (item.id === id) {
         item.isEditToggle = !item.isEditToggle;
       }
-
-      // else {
-      //   item.isButtonToggle = !item.isButtonToggle;
-      // }
-
       if (item.id !== id) {
         item.isButtonToggle = !item.isButtonToggle;
       }
-
       return item;
     });
 
@@ -117,7 +103,6 @@ class Parent extends Component {
     return (
       <div className="parent-container">
         <Child2
-          //onSubmit={this.handleSubmit}
           handleSubmit={this.handleSubmit}
           handleOnChange={this.handleOnChange}
           inputWish={this.state.inputWish}
