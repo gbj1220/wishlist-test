@@ -23,6 +23,10 @@ export class Child extends Component {
     this.props.updateWish(id, this.state.toggleInput);
   };
 
+  priorityFunc = (event) => {
+    console.log(event.id);
+  };
+
   render() {
     return (
       <ul>
@@ -43,7 +47,6 @@ export class Child extends Component {
               ) : (
                 <li className={strikeThroughClass}>{item.wish}</li>
               )}
-
               <Button
                 propsButtonToggle={item.isButtonToggle}
                 propsClassName={"btn btn-success button-style"}
@@ -63,6 +66,15 @@ export class Child extends Component {
                 propsOnClick={() => this.props.handleDeleteByID(item.id)}
                 propsName={"Delete"}
               />
+
+              <label for="priority"> Make Priority </label>
+              <input
+                onClick={this.priorityFunc}
+                name={"makePriority"}
+                id={"priority"}
+                type={"checkbox"}
+                propsOnClick={this.priorityFunc(item.id)}
+              ></input>
               <br />
             </React.Fragment>
           );

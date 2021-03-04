@@ -14,9 +14,9 @@ class Child2Form extends Component {
             className="form-control"
             id="exampleFormControlInput1"
             placeholder="Enter Todo"
-            name="inputTodo"
+            name="inputWish"
             onChange={this.props.handleOnChange}
-            value={this.props.inputTodo}
+            value={this.props.inputWish}
           />
         </div>
         <button className="btn btn-primary mb-3" type="submit">
@@ -30,7 +30,7 @@ class Child2Form extends Component {
 Child2Form.propTypes = {
   handleSubmit: PropTypes.func.isRequired,
   handleOnChange: PropTypes.func.isRequired,
-  inputTodo: PropTypes.string.isRequired,
+  inputWish: PropTypes.string.isRequired,
 };
 
 export default Child2Form;

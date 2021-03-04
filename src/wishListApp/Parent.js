@@ -15,6 +15,7 @@ class Parent extends Component {
         isDone: false,
         isEditToggle: false,
         isButtonToggle: false,
+        isPriorityToggle: false,
       },
     ],
     inputWish: "",
@@ -99,6 +100,18 @@ class Parent extends Component {
     });
   };
 
+  priorityStatus = (id) => {
+    let priority = this.state.wishList.map((item) => {
+      if (item.id === id) {
+        return item.priority === !item.priority;
+      }
+      return item;
+    });
+    this.setState({
+      wishList: priority,
+    });
+  };
+
   render() {
     return (
       <div className="parent-container">
@@ -113,6 +126,7 @@ class Parent extends Component {
           handleIsDone={this.handleIsDone}
           handleEditToggle={this.handleEditToggle}
           updateWish={this.updateWish}
+          priorityStatus={this.priorityStatus}
         />
       </div>
     );
